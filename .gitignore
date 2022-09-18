@@ -7,6 +7,14 @@ logs.json
 
 node_modules
 
+# numpy file
+*.npz
+*.npy
+
+# pointcloud file
+*.ply
+*.obj
+
 # Byte-compiled / optimized / DLL files
 __pycache__
 *.py[cod]
