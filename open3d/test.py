@@ -5,7 +5,7 @@ import open3d as o3d
 import multiprocessing as mp
 import numpy as np
 
-input_point_path = "../data/map_pc.ply"
+input_point_path = "./open3d/map_pc.ply"
 point_cloud_data = o3d.io.read_point_cloud(input_point_path)
 
 vertices = np.random.rand(100,3)
