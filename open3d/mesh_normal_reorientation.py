@@ -2,11 +2,18 @@ import open3d as o3d
 import trimesh
 import numpy as np
 
-input_mesh_path = "./open3d/input_data/L7_60M.obj"
-input_points_path = "./open3d/input_data/L7_60M_with_normal_combine.ply"
-save_mesh_path = "./open3d/output_data/L7_60M_reorientation.obj"
+# input_mesh_path = "./open3d/input_data/L7_60M.obj"
+# input_points_path = "./open3d/input_data/L7_60M_with_normal_combine.ply"
+# save_mesh_path = "./open3d/output_data/L7_60M_reorientation.obj"
 save_rescale_mesh_path = "./open3d/output_data/L7_60M_rescale.obj"
 save_rescale_point_path = "./open3d/output_data/L7_60M_rescale.ply"
+
+
+
+input_mesh_path = "./open3d/input_data/map_undc_comp.obj"
+input_points_path = "./open3d/input_data/map_pc.ply"
+save_mesh_path = "./open3d/output_data/map_undc_comp_reorientation.obj"
+
 
 input_mesh = trimesh.load(input_mesh_path)
 vertices = input_mesh.vertices.astype(np.float32)
