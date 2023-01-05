@@ -10,9 +10,9 @@ save_rescale_point_path = "./open3d/output_data/L7_60M_rescale.ply"
 
 
 
-input_mesh_path = "./open3d/input_data/map_undc_comp.obj"
-input_points_path = "./open3d/input_data/map_pc.ply"
-save_mesh_path = "./open3d/output_data/map_undc_comp_reorientation.obj"
+input_mesh_path = "./open3d/data/input_data/mai-ori.obj"
+input_points_path = "./open3d/data/input_data/mai-normal.ply"
+save_mesh_path = "./open3d/data/output_data/mai_reori.obj"
 
 
 input_mesh = trimesh.load(input_mesh_path)
@@ -27,11 +27,17 @@ input_points = np.asarray(point_cloud_data.points)
 input_normals = np.asarray(point_cloud_data.normals)
 
 # 计算极差值，即波峰到波谷
-input_ptp = input_points.ptp(axis=0) 
+input_ptp = input_points.ptp(axis=0)
 scale_value = input_ptp.max()
 bb_min = input_points.min(axis=0)
-input_points = (input_points - bb_min) / scale_value * (10 * 64)
-point_cloud_data.points = o3d.utility.Vector3dVector(input_points[:, 0:3])
+
+# update the vertices's position
+# TODO
+# vertices = vertices / 640 * scale_value + bb_min
+
+
+# input_points = (input_points - bb_min) / scale_value * (10 * 64)
+# point_cloud_data.points = o3d.utility.Vector3dVector(input_points[:, 0:3])
 
 if 0:
     # 经测试，以下代码没有问题

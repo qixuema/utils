@@ -1,8 +1,8 @@
 import open3d as o3d
 import numpy as np
 
-input_mesh_path = "open3d/data/input_data/HWL_undc.ply"
-output_mesh_path = "open3d/data/output_data/HWL_undc.ply"
+input_mesh_path = "open3d/data/input_data/god-knows.ply"
+output_mesh_path = "open3d/data/output_data/god-knows.ply"
 mesh = o3d.io.read_triangle_mesh(input_mesh_path)
 vertices = np.asarray(mesh.vertices)
 
