@@ -1,5 +1,7 @@
+import torch
 def square_distance(src, dst):
     """
+    计算两组点集中, 所有点, 两两之间的距离平方;
     Calculate Euclid distance between each two points.
     because: 
         dist = (xs - xd)^2 + (ys - yd)^2 + (zs - zd)^2
@@ -22,3 +24,10 @@ def square_distance(src, dst):
     dist += torch.sum(src ** 2, -1).view(B, N, 1)
     dist += torch.sum(dst ** 2, -1).view(B, 1, M)
     return dist   
+
+src = torch.randint(1, 10, [2,4,3])
+dist = torch.randint(1, 10, [2,5,3])
+
+res = square_distance(src, dist)
+
+
